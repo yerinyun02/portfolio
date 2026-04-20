@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yerin Yun — Energy × Finance × Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--teal-50:#E1F5EE;--teal-100:#9FE1CB;--teal-500:#1D9E75;--teal-600:#0F6E56;--teal-800:#085041;--green-50:#EAF3DE;--green-600:#3B6D11;--amber-50:#FAEEDA;--amber-600:#854F0B;--text-primary:#1a1a18;--text-secondary:#5f5e5a;--text-muted:#9a9891;--border:rgba(0,0,0,0.1);--border-md:rgba(0,0,0,0.18);--bg:#fafaf8;--bg-card:#ffffff;--bg-subtle:#f4f3ef}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text-primary);line-height:1.6;-webkit-font-smoothing:antialiased}
+.page{display:none}.page.active{display:block}
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:58px}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:17px;cursor:pointer;color:var(--text-primary)}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:13px;color:var(--text-secondary);text-decoration:none;cursor:pointer;transition:color .2s}
+.nav-links a:hover{color:var(--text-primary)}
+.hero{padding:6rem 2.5rem 5rem;max-width:880px;margin:0 auto}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-500);margin-bottom:1.25rem}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(36px,6vw,56px);font-weight:400;line-height:1.1;letter-spacing:-.02em;margin-bottom:1.5rem}
+.hero h1 em{font-style:italic;color:var(--teal-500)}
+.hero-bio{font-size:16px;color:var(--text-secondary);line-height:1.75;max-width:520px;margin-bottom:2rem}
+.hero-tags{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:2rem}
+.hero-tag{font-size:12px;font-weight:400;padding:5px 14px;border-radius:100px;border:1px solid var(--border-md);color:var(--text-secondary);background:var(--bg-card)}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn-p{padding:10px 24px;border-radius:100px;font-size:13px;font-weight:500;background:var(--teal-500);color:#fff;border:none;cursor:pointer;transition:background .2s,transform .15s}
+.btn-p:hover{background:var(--teal-600);transform:translateY(-1px)}
+.btn-s{padding:10px 24px;border-radius:100px;font-size:13px;font-weight:500;background:transparent;color:var(--text-primary);border:1px solid var(--border-md);cursor:pointer;transition:background .2s,transform .15s}
+.btn-s:hover{background:var(--bg-subtle);transform:translateY(-1px)}
+.sw{max-width:880px;margin:0 auto;padding:3rem 2.5rem}
+hr.div{border:none;border-top:1px solid var(--border);max-width:880px;margin:0 auto}
+.slabel{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-500);margin-bottom:2rem}
+.exp-item{display:flex;gap:2rem;margin-bottom:2.5rem}
+.exp-left{width:160px;flex-shrink:0}
+.exp-period,.exp-loc{font-size:12px;color:var(--text-muted);line-height:1.6}
+.exp-org{font-size:13px;color:var(--teal-500);font-weight:500;margin-bottom:5px}
+.exp-right h3{font-size:15px;font-weight:500;margin-bottom:3px;line-height:1.4}
+.exp-desc{font-size:13px;color:var(--text-secondary);line-height:1.7}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.pc{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .15s}
+.pc:hover{border-color:var(--teal-100);box-shadow:0 4px 24px rgba(29,158,117,.08);transform:translateY(-3px)}
+.pc.featured{border:2px solid var(--teal-500) !important}
+.pthumb{width:100%;height:100px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:1rem}
+.th1{background:var(--green-50)}.th2{background:var(--teal-50)}.th3{background:var(--amber-50)}
+.fp{font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:100px;background:var(--amber-50);color:var(--amber-600);display:inline-block;margin-bottom:8px}
+.ptag{font-size:11px;font-weight:500;padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:10px}
+.tg{background:var(--green-50);color:var(--green-600)}.tt{background:var(--teal-50);color:var(--teal-600)}.ta{background:var(--amber-50);color:var(--amber-600)}
+.pc h3{font-size:14px;font-weight:500;margin-bottom:7px;line-height:1.4}
+.pc p{font-size:12px;color:var(--text-secondary);line-height:1.65}
+.stars{display:flex;align-items:center;gap:4px;margin-top:12px}
+.son{color:#EF9F27;font-size:12px;letter-spacing:1px}.soff{color:#e0ddd5;font-size:12px;letter-spacing:1px}.slbl{font-size:11px;color:var(--text-muted);margin-left:4px}
+.carrow{font-size:11px;color:var(--teal-500);font-weight:500;margin-top:14px}
+.vbox{background:var(--bg-subtle);border:1px solid var(--border);border-radius:16px;padding:4rem 2rem;text-align:center}
+.vbox h3{font-family:'DM Serif Display',serif;font-size:20px;font-weight:400;margin-bottom:8px}
+.vbox p{font-size:13px;color:var(--text-secondary);max-width:360px;margin:0 auto 14px}
+.skwrap{display:flex;flex-wrap:wrap;gap:9px}
+.chip{font-size:12px;padding:6px 14px;border-radius:100px;border:1px solid var(--border-md);background:var(--bg-card);color:var(--text-secondary)}
+footer{border-top:1px solid var(--border);padding:2rem 2.5rem;text-align:center;font-size:12px;color:var(--text-muted)}
+footer a{color:var(--teal-500);text-decoration:none}
+.pp{max-width:720px;margin:0 auto;padding:2.5rem 2.5rem 5rem}
+.bbtn{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-secondary);background:none;border:none;cursor:pointer;padding:0;margin-bottom:2.5rem;transition:color .2s}
+.bbtn:hover{color:var(--text-primary)}
+.phdr{margin-bottom:2rem;padding-bottom:1.75rem;border-bottom:1px solid var(--border)}
+.phdr h1{font-family:'DM Serif Display',serif;font-size:32px;font-weight:400;line-height:1.2;margin-bottom:8px}
+.psub{font-size:13px;color:var(--text-secondary);margin-bottom:12px}
+.ptags{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pbody{font-size:14px;color:var(--text-secondary);line-height:1.85}
+.pbody h2{font-family:'DM Serif Display',serif;font-size:18px;font-weight:400;color:var(--text-primary);margin:2.25rem 0 .75rem}
+.pbody p{margin-bottom:1rem}
+.pph{background:var(--bg-subtle);border:1px dashed var(--border-md);border-radius:12px;padding:1.75rem;font-size:13px;color:var(--text-muted);text-align:center;margin:1.75rem 0}
+.hl{background:var(--teal-50);border-left:3px solid var(--teal-500);border-radius:0 10px 10px 0;padding:14px 18px;margin:1.5rem 0;font-size:13px;color:var(--teal-800);line-height:1.7}
+.ipbadge{font-size:11px;font-weight:500;letter-spacing:.05em;padding:4px 11px;border-radius:100px;background:var(--amber-50);color:var(--amber-600);text-transform:uppercase}
+@media(max-width:600px){nav{padding:0 1.25rem}.hero{padding:3.5rem 1.25rem 3rem}.sw{padding:2rem 1.25rem}.pp{padding:1.5rem 1.25rem 4rem}.exp-item{flex-direction:column;gap:.5rem}.exp-left{width:auto}}
+</style>
+</head>
+<body>
+
+<div id="home-page" class="page active">
+  <nav>
+    <span class="nav-logo" onclick="go('home')">Yerin Yun</span>
+    <div class="nav-links">
+      <a onclick="sc('experience')">Experience</a>
+      <a onclick="sc('projects')">Projects</a>
+      <a onclick="sc('intro')">Intro</a>
+      <a onclick="sc('skills')">Skills</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <p class="hero-eyebrow">Information Science & Data Science · UIUC 2026</p>
+    <h1>Energy, finance,<br>and <em>data</em> — unified.</h1>
+    <p class="hero-bio">I bridge technical systems and investment decisions — combining energy policy experience at the U.S. Department of Energy with financial modeling and data-driven analysis to support sustainable, scalable infrastructure.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Wholesale energy markets</span>
+      <span class="hero-tag">Financial modeling</span>
+      <span class="hero-tag">Python · SQL · Excel</span>
+      <span class="hero-tag">Project finance</span>
+    </div>
+    <div class="hero-cta">
+      <button class="btn-p" onclick="sc('projects')">View projects</button>
+      <button class="btn-s">Download résumé</button>
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <div class="sw" id="experience">
+    <div class="slabel">Experience</div>
+    <div class="exp-item">
+      <div class="exp-left"><div class="exp-period">Sep 2025 – Jan 2026</div><div class="exp-loc">Washington, D.C.</div></div>
+      <div>
+        <p class="exp-org">U.S. Department of Energy</p>
+        <h3>Portfolio Management Division Intern — Office of Energy Dominance Financing</h3>
+        <p class="exp-desc">Built capital-allocation frameworks synthesizing 20+ sources, modeled credit risk and repayment capacity across interest rate scenarios, and authored financial memos on tax-equity partnership-flip structures for an active federal loan portfolio.</p>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-left"><div class="exp-period">Jul – Aug 2025</div><div class="exp-loc">Seoul, South Korea</div></div>
+      <div>
+        <p class="exp-org">Deloitte Anjin LLC</p>
+        <h3>Risk & Financial Advisory Intern</h3>
+        <p class="exp-desc">Built acquisition models for a Class A Seoul commercial asset, analyzed Latin American PPP financing structures, and assessed Vietnam's coal-to-biomass retrofit market to strengthen energy transition client models.</p>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-left"><div class="exp-period">Dec 2024 – Jan 2025</div><div class="exp-loc">Seoul, South Korea</div></div>
+      <div>
+        <p class="exp-org">TS Investment</p>
+        <h3>Venture Capital & Private Equity Intern</h3>
+        <p class="exp-desc">Conducted investment due diligence on a vertically integrated hospitality platform and analyzed historical hotel sales data to evaluate acquisition pricing, exit multiples, and cash flow stability.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <div class="sw" id="projects">
+    <div class="slabel">Data projects</div>
+    <div class="pgrid">
+      <div class="pc" onclick="proj(1)">
+        <div class="pthumb th1">🌿</div>
+        <span class="ptag tg">EIA datasets · Class</span>
+        <h3>U.S. State Energy Analysis</h3>
+        <p>Data wrangling and renewable vs. fossil capacity analysis across states, with price correlation using real federal EIA-860/861 datasets.</p>
+        <div class="stars"><span class="son">★★★★</span><span class="soff">★</span><span class="slbl">Ascend relevance</span></div>
+        <div class="carrow">View project →</div>
+      </div>
+      <div class="pc" onclick="proj(2)">
+        <div class="pthumb th2">🗺️</div>
+        <span class="ptag tt">Data viz · Geographic</span>
+        <h3>Energy Mix Visualization</h3>
+        <p>Visual storytelling across states — energy sources, generation mix, and pricing trends as interactive geographic charts.</p>
+        <div class="stars"><span class="son">★★★</span><span class="soff">★★</span><span class="slbl">Ascend relevance</span></div>
+        <div class="carrow">View project →</div>
+      </div>
+      <div class="pc featured" onclick="proj(3)">
+        <div class="pthumb th3">⚡</div>
+        <div class="fp">In progress · highest impact</div><br>
+        <span class="ptag ta">CAISO · Solo</span>
+        <h3>CAISO DA/RT Battery Storage Analysis</h3>
+        <p>Day-ahead vs. real-time price spread modeling at key CAISO nodes — quantifying battery storage revenue potential from public OASIS data.</p>
+        <div class="stars"><span class="son">★★★★★</span><span class="slbl">Ascend relevance</span></div>
+        <div class="carrow">View project →</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <div class="sw" id="intro">
+    <div class="slabel">Introduction</div>
+    <div class="vbox">
+      <div style="font-size:40px;margin-bottom:14px">▶</div>
+      <h3>A quick introduction</h3>
+      <p>A short video about who I am, what I work on, and what I'm looking for next.</p>
+      <!-- Replace with: <iframe width="560" height="315" src="YOUR_YOUTUBE_EMBED_URL" frameborder="0" allowfullscreen></iframe> -->
+      <span style="font-size:12px;color:var(--teal-500)">Paste your YouTube or Loom embed code here</span>
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <div class="sw" id="skills">
+    <div class="slabel">Skills</div>
+    <div class="skwrap">
+      <span class="chip">Financial modeling</span><span class="chip">Credit & risk assessment</span>
+      <span class="chip">Project finance</span><span class="chip">Debt & equity financing</span>
+      <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Excel / Power BI</span>
+      <span class="chip">Bloomberg Terminal</span><span class="chip">S&P Capital IQ</span>
+      <span class="chip">EIA datasets</span><span class="chip">CAISO OASIS</span>
+      <span class="chip">Machine learning</span><span class="chip">Data visualization</span>
+      <span class="chip">Partnership flip structures</span>
+    </div>
+  </div>
+
+  <footer>
+    Yerin Yun · B.S. Information Science & Data Science, UIUC ·
+    <a href="mailto:yerin@illinois.edu">yerin@illinois.edu</a>
+  </footer>
+</div>
+
+<div id="project-page" class="page">
+  <nav>
+    <span class="nav-logo" onclick="go('home')">Yerin Yun</span>
+    <div class="nav-links"><a onclick="go('home')">← All projects</a></div>
+  </nav>
+  <div class="pp" id="proj-content"></div>
+</div>
+
+<script>
+const P={
+  1:{title:"U.S. State Energy Analysis",sub:"Data wrangling · Renewable/price correlation · EIA-860/861 datasets",tc:"tg",tl:"Class project",ip:false,
+    body:`<div class="hl">Uses real federal EIA-860 and EIA-861 datasets — state-level generation capacity, fuel mix, and electricity pricing across the United States.</div>
+    <h2>Overview</h2><p>Add your project overview — the research question, scope of the dataset, and what you set out to understand about U.S. energy generation patterns.</p>
+    <div class="pph">📊 Add a key chart — e.g. renewable capacity by state, price vs. generation mix scatter</div>
+    <h2>Methods & tools</h2><p>Describe your data wrangling approach — how you cleaned and joined EIA tables, and which Python libraries or Excel tools you used.</p>
+    <h2>Key findings</h2><p>Summarize 2–3 findings — e.g. states with higher renewable share and their price correlation, regional generation mix patterns.</p>
+    <div class="pph">📎 Link to GitHub repo or Jupyter notebook</div>`
+  },
+  2:{title:"Energy Mix Visualization",sub:"Visual storytelling · States + energy sources + pricing",tc:"tt",tl:"Data viz project",ip:false,
+    body:`<div class="hl">Interactive geographic visualizations showing how energy source mix and electricity pricing vary across U.S. states — making complex federal data accessible at a glance.</div>
+    <h2>Overview</h2><p>Add your project overview — the visual story you wanted to tell, the intended audience, and the tools you used.</p>
+    <div class="pph">📊 Embed or screenshot your key visualization — choropleth map, bar chart race, or dashboard</div>
+    <h2>Methods & tools</h2><p>Describe the visualization stack — e.g. Python (Plotly, Folium, Altair), Tableau, or Power BI.</p>
+    <h2>Key findings</h2><p>What geographic or temporal patterns stood out? What did the visual reveal that tables could not?</p>
+    <div class="pph">📎 Link to live dashboard or GitHub repo</div>`
+  },
+  3:{title:"CAISO Day-Ahead vs. Real-Time Battery Storage Analysis",sub:"Wholesale market mechanics · CAISO fluency · Scenario modeling",tc:"ta",tl:"Solo project",ip:true,
+    body:`<div class="hl">Analyzes day-ahead (DA) vs. real-time (RT) price spreads at key CAISO nodes — quantifying battery storage revenue potential using public OASIS data. Directly relevant to Ascend Analytics' SmartBidder platform, which optimizes DA/RT bidding for battery and renewable assets.</div>
+    <h2>Overview</h2><p>Add your project overview — the core question (how much can a battery earn through DA/RT arbitrage at a given CAISO node?) and your analytical approach.</p>
+    <div class="pph">📊 Add your DA vs. RT price spread chart or Excel scenario model output</div>
+    <h2>Data source</h2><p>Data pulled from CAISO OASIS (oasis.caiso.com) — public LMP price data at selected pricing nodes. Python for data extraction; Excel for scenario analysis and presentation.</p>
+    <h2>Methods & tools</h2><p>Describe the price spread calculation, node selection rationale, and the Excel scenario model structure (base / upside / downside revenue cases).</p>
+    <h2>Key findings</h2><p>Summarize 2–3 quantitative findings — e.g. average DA/RT spread, estimated annual revenue per MWh of storage, sensitivity to timing.</p>
+    <div class="pph">📎 Link to Excel model or GitHub repo when complete</div>`
+  }
+};
+
+function go(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(n==='home'?'home-page':'project-page').classList.add('active');
+  window.scrollTo(0,0);
+}
+function proj(id){
+  const p=P[id];
+  document.getElementById('proj-content').innerHTML=`
+    <button class="bbtn" onclick="go('home')">← All projects</button>
+    <div class="phdr">
+      <h1>${p.title}</h1>
+      <p class="psub">${p.sub}</p>
+      <div class="ptags">
+        <span class="ptag ${p.tc}">${p.tl}</span>
+        ${p.ip?'<span class="ipbadge">In progress</span>':''}
+      </div>
+    </div>
+    <div class="pbody">${p.body}</div>`;
+  go('project');
+}
+function sc(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'})}
+</script>
+</body>
+</html>
