@@ -201,7 +201,7 @@ footer a{color:var(--teal-500);text-decoration:none}
     <a onclick="sc('projects')">Projects</a>
     <a onclick="sc('skills')">Skills</a>
     <a onclick="sc('contact')">Contact</a>
-    <a onclick="go('resume')">Resume</a>
+    <!-- <a onclick="go('resume')">Resume</a> -->
   </div>
 </nav>
 
@@ -552,13 +552,14 @@ footer a{color:var(--teal-500);text-decoration:none}
     <span class="nav-logo" onclick="go('home')">Yerin Yun</span>
     <div class="nav-links">
       <a onclick="go('home')">&larr; All projects</a>
-      <a onclick="go('resume')">Resume</a>
+      <!-- <a onclick="go('resume')">Resume</a> --> 
     </div>
   </nav>
   <div class="pp" id="proj-content"></div>
 </div>
 
 <!-- ═══════════════ RESUME PAGE ═══════════════ -->
+<!-- 
 <div id="resume-page" class="page">
   <nav>
     <span class="nav-logo" onclick="go('home')">Yerin Yun</span>
@@ -580,7 +581,8 @@ footer a{color:var(--teal-500);text-decoration:none}
     <iframe class="pdf-frame" id="pdf-frame" src="Yerin_Yun_Resume_4_17_26.pdf" title="Yerin Yun Resume"></iframe>
   </div>
 </div>
-
+-->
+  
 <script>
 const P = {
   1: {
@@ -692,6 +694,8 @@ function embedVid() {
   document.getElementById('video-el').style.display = 'none';
   document.getElementById('video-ph').style.display = 'none';
 }
+
+/*
 function handleResume(e) {
   const f = e.target.files[0]; if (!f) return;
   const url = URL.createObjectURL(f);
@@ -699,6 +703,7 @@ function handleResume(e) {
   const dl = document.getElementById('resume-dl-link');
   dl.href = url; dl.download = f.name;
 }
+*/
 </script>
 </body>
 </html>
