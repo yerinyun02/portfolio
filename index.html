@@ -13,176 +13,183 @@
   --text-primary:#1a1a18;--text-secondary:#5f5e5a;--text-muted:#9a9891;
   --border:rgba(0,0,0,0.1);--border-md:rgba(0,0,0,0.18);
   --bg:#fafaf8;--bg-card:#ffffff;--bg-subtle:#f4f3ef;
-
   --serif: Georgia,'Times New Roman',Times,serif;
   --sans: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--serif);background:var(--bg);color:var(--text-primary);line-height:1.75;-webkit-font-smoothing:antialiased;font-size:18px}
-
 .page{display:none}.page.active{display:block}
 
-/* ── NAV ── */
+/* NAV */
 nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:62px}
 .nav-logo{font-family:var(--serif);font-size:20px;cursor:pointer;color:var(--text-primary);font-weight:400;letter-spacing:.01em}
-.nav-links{display:flex;gap:2rem}
-.nav-links a{font-family:var(--sans);font-size:14px;color:var(--text-secondary);text-decoration:none;cursor:pointer;transition:color .2s;letter-spacing:.02em}
+.nav-links{display:flex;gap:1.75rem}
+.nav-links a{font-family:var(--sans);font-size:13px;color:var(--text-secondary);text-decoration:none;cursor:pointer;transition:color .2s;letter-spacing:.02em}
 .nav-links a:hover{color:var(--text-primary)}
 
-/* ── HERO ── */
-.hero{padding:6rem 2.5rem 4.5rem;max-width:900px;margin:0 auto}
+/* HERO */
+.hero-split{display:grid;grid-template-columns:1fr 380px;gap:0;max-width:900px;margin:0 auto;padding:5rem 2.5rem 4rem}
 .hero-eyebrow{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-500);margin-bottom:1.5rem}
-.hero h1{font-family:var(--serif);font-size:clamp(44px,6.5vw,68px);font-weight:400;line-height:1.08;letter-spacing:-.02em;margin-bottom:1.75rem}
+.hero h1{font-family:var(--serif);font-size:clamp(40px,6vw,64px);font-weight:400;line-height:1.08;letter-spacing:-.02em;margin-bottom:1.75rem}
 .hero h1 em{font-style:italic;color:var(--teal-500)}
-.hero-bio{font-size:19px;color:var(--text-secondary);line-height:1.8;max-width:560px;margin-bottom:2.25rem;font-weight:400}
-.hero-tags{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:2.25rem}
-.hero-tag{font-family:var(--sans);font-size:13px;font-weight:400;padding:6px 16px;border-radius:100px;border:1px solid var(--border-md);color:var(--text-secondary);background:var(--bg-card)}
+.hero-bio{font-size:17px;color:var(--text-secondary);line-height:1.8;max-width:480px;margin-bottom:2rem}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2rem}
+.hero-tag{font-family:var(--sans);font-size:12px;padding:5px 14px;border-radius:100px;border:1px solid var(--border-md);color:var(--text-secondary);background:var(--bg-card)}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-.btn-p{padding:12px 28px;border-radius:100px;font-family:var(--sans);font-size:15px;font-weight:500;background:var(--teal-500);color:#fff;border:none;cursor:pointer;transition:background .2s,transform .15s}
+.btn-p{padding:11px 26px;border-radius:100px;font-family:var(--sans);font-size:14px;font-weight:500;background:var(--teal-500);color:#fff;border:none;cursor:pointer;transition:background .2s,transform .15s}
 .btn-p:hover{background:var(--teal-600);transform:translateY(-1px)}
-.btn-s{padding:12px 28px;border-radius:100px;font-family:var(--sans);font-size:15px;font-weight:500;background:transparent;color:var(--text-primary);border:1px solid var(--border-md);cursor:pointer;transition:background .2s,transform .15s}
+.btn-s{padding:11px 26px;border-radius:100px;font-family:var(--sans);font-size:14px;font-weight:500;background:transparent;color:var(--text-primary);border:1px solid var(--border-md);cursor:pointer;transition:background .2s,transform .15s}
 .btn-s:hover{background:var(--bg-subtle);transform:translateY(-1px)}
 
 hr.div{border:none;border-top:1px solid var(--border);max-width:900px;margin:0 auto}
 .sw{max-width:900px;margin:0 auto;padding:3.5rem 2.5rem}
-.slabel{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-500);margin-bottom:2.25rem}
+.slabel{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-500);margin-bottom:2rem}
 
-/* ── ABOUT ── */
+/* PHOTO UPLOAD */
+.hero-right{padding-left:2.5rem}
+.hero-photo-zone{width:100%;max-width:280px;height:340px;background:var(--bg-subtle);border-radius:16px;overflow:hidden;margin-top:1rem}
+.hero-photo-zone img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;border-radius:16px}
+
+/* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.about-body{font-size:18px;color:var(--text-secondary);line-height:1.85;margin-bottom:1.5rem}
-.about-quote{font-family:var(--serif);font-size:21px;font-style:italic;color:var(--text-primary);line-height:1.5;border-left:3px solid var(--teal-500);padding-left:20px;margin:1.75rem 0}
-.interests-title{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-500);margin-bottom:1rem}
-.interests-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:2rem}
-.interest-chip{font-size:15px;color:var(--text-secondary);padding:10px 14px;border:1px solid var(--border);border-radius:10px;background:var(--bg-card);display:flex;align-items:center;gap:8px;line-height:1.3}
-.interest-chip::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal-500);flex-shrink:0}
+.about-body{font-size:17px;color:var(--text-secondary);line-height:1.85;margin-bottom:1.25rem}
+.about-quote{font-family:var(--serif);font-size:20px;font-style:italic;color:var(--text-primary);line-height:1.55;border-left:3px solid var(--teal-500);padding-left:20px;margin:0 0 1.75rem}
+.interests-title{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-500);margin-bottom:.875rem}
+.interests-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:2rem}
+.interest-chip{font-size:14px;color:var(--text-secondary);padding:9px 14px;border:1px solid var(--border);border-radius:10px;background:var(--bg-card);display:flex;align-items:center;gap:8px;line-height:1.3}
+.interest-chip::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--teal-500);flex-shrink:0}
 .currently-item{display:flex;gap:14px;font-size:15px;color:var(--text-secondary);padding:10px 0;border-bottom:1px solid var(--border);line-height:1.55}
 .currently-item:last-child{border-bottom:none}
 .currently-label{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);padding-top:3px;flex-shrink:0;min-width:56px}
 
-/* ── VIDEO ── */
-.video-section{max-width:900px;margin:0 auto;padding:3.5rem 2.5rem}
-.vbox{background:var(--bg-subtle);border:1px solid var(--border);border-radius:16px;padding:4rem 2rem;text-align:center}
-.vbox h3{font-family:var(--serif);font-size:24px;font-weight:400;margin-bottom:10px}
-.vbox p{font-size:16px;color:var(--text-secondary);max-width:380px;margin:0 auto 16px;line-height:1.7}
-.vbox-note{font-family:var(--sans);font-size:13px;color:var(--teal-500)}
-.loom-wrap{margin-top:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.loom-wrap input[type=text]{font-family:var(--sans);font-size:13px;padding:9px 16px;border:1px solid var(--border-md);border-radius:100px;background:var(--bg-card);color:var(--text-primary);outline:none;width:280px;transition:border-color .2s}
+/* VIDEO */
+.vbox{background:var(--bg-subtle);border:1px solid var(--border);border-radius:16px;padding:3.5rem 2rem;text-align:center}
+.vbox h3{font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:8px}
+.vbox p{font-size:15px;color:var(--text-secondary);max-width:380px;margin:0 auto 16px;line-height:1.7}
+.loom-wrap{margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.loom-wrap input[type=text]{font-family:var(--sans);font-size:13px;padding:9px 16px;border:1px solid var(--border-md);border-radius:100px;background:var(--bg-card);color:var(--text-primary);outline:none;width:260px;transition:border-color .2s}
 .loom-wrap input:focus{border-color:var(--teal-500)}
-.loom-wrap button{font-family:var(--sans);font-size:13px;font-weight:500;padding:9px 20px;border-radius:100px;background:var(--teal-500);color:#fff;border:none;cursor:pointer;transition:background .2s}
+.loom-wrap button{font-family:var(--sans);font-size:13px;font-weight:500;padding:9px 20px;border-radius:100px;background:var(--teal-500);color:#fff;border:none;cursor:pointer}
 .loom-wrap button:hover{background:var(--teal-600)}
-#video-el{width:100%;border-radius:12px;display:none;margin-top:16px;max-height:440px}
-#video-frame{width:100%;height:400px;border:none;border-radius:12px;display:none;margin-top:16px}
+#video-el{width:100%;border-radius:12px;display:none;margin-top:16px;max-height:420px}
+#video-frame{width:100%;height:380px;border:none;border-radius:12px;display:none;margin-top:16px}
 
-/* ── EXPERIENCE ── */
-.exp-item{display:flex;gap:2.5rem;margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border)}
+/* EXPERIENCE */
+.exp-item{display:flex;gap:2.5rem;margin-bottom:2.75rem;padding-bottom:2.75rem;border-bottom:1px solid var(--border)}
 .exp-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.exp-left{width:175px;flex-shrink:0;padding-top:4px}
-.exp-period{font-family:var(--sans);font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:3px}
-.exp-loc{font-family:var(--sans);font-size:13px;color:var(--text-muted);line-height:1.6}
-.exp-org{font-family:var(--sans);font-size:13px;color:var(--teal-500);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px}
-.exp-right h3{font-family:var(--serif);font-size:21px;font-weight:400;margin-bottom:10px;line-height:1.35;color:var(--text-primary)}
-.exp-desc{font-size:16px;color:var(--text-secondary);line-height:1.8}
-.exp-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
-.exp-tag{font-family:var(--sans);font-size:11px;font-weight:500;padding:4px 12px;border-radius:100px;background:var(--teal-50);color:var(--teal-600)}
+.exp-left{width:170px;flex-shrink:0;padding-top:4px}
+.exp-period{font-family:var(--sans);font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:2px}
+.exp-loc{font-family:var(--sans);font-size:12px;color:var(--text-muted)}
+.exp-org{font-family:var(--sans);font-size:12px;color:var(--teal-500);font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:7px}
+.exp-right h3{font-family:var(--serif);font-size:20px;font-weight:400;margin-bottom:10px;line-height:1.35}
+.exp-desc{font-size:15px;color:var(--text-secondary);line-height:1.8}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.exp-tag{font-family:var(--sans);font-size:11px;font-weight:500;padding:3px 11px;border-radius:100px;background:var(--teal-50);color:var(--teal-600)}
 
-/* ── PROJECTS ── */
-.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.pc{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.75rem;cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .15s}
+/* EDUCATION */
+.edu-item{display:flex;gap:2.5rem;margin-bottom:2.25rem;padding-bottom:2.25rem;border-bottom:1px solid var(--border)}
+.edu-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.edu-left{width:170px;flex-shrink:0;padding-top:4px}
+.edu-period{font-family:var(--sans);font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:2px}
+.edu-loc{font-family:var(--sans);font-size:12px;color:var(--text-muted)}
+.edu-school{font-family:var(--sans);font-size:12px;color:var(--teal-500);font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:7px}
+.edu-right h3{font-family:var(--serif);font-size:20px;font-weight:400;margin-bottom:6px;line-height:1.35}
+.edu-sub{font-size:15px;color:var(--text-secondary);line-height:1.7;margin-bottom:8px}
+.edu-detail{font-size:14px;color:var(--text-muted);line-height:1.7}
+.edu-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.edu-tag{font-family:var(--sans);font-size:11px;font-weight:500;padding:3px 11px;border-radius:100px;background:var(--green-50);color:var(--green-600)}
+
+/* PROJECTS */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.pc{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .15s}
 .pc:hover{border-color:var(--teal-100);box-shadow:0 4px 24px rgba(29,158,117,.08);transform:translateY(-3px)}
 .pc.featured{border:2px solid var(--teal-500)}
-.pthumb{width:100%;height:110px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:36px;margin-bottom:1.25rem;position:relative;overflow:hidden}
+.pthumb{width:100%;height:100px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:13px;margin-bottom:1.1rem;position:relative;overflow:hidden;font-family:var(--sans);color:rgba(0,0,0,0.3);letter-spacing:.06em;text-transform:uppercase}
 .pthumb img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;border-radius:10px;display:none}
 .pthumb input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.pthumb .ph-text{font-family:var(--sans);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(0,0,0,0.3);position:absolute;bottom:8px;width:100%;text-align:center;pointer-events:none}
+.pthumb .ph-text{pointer-events:none;font-size:11px}
 .th1{background:var(--green-50)}.th2{background:var(--teal-50)}.th3{background:var(--amber-50)}
 .fp{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:100px;background:var(--amber-50);color:var(--amber-600);display:inline-block;margin-bottom:8px}
-.ptag{font-family:var(--sans);font-size:12px;font-weight:500;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px}
+.ptag{font-family:var(--sans);font-size:11px;font-weight:500;padding:3px 11px;border-radius:100px;display:inline-block;margin-bottom:10px}
 .tg{background:var(--green-50);color:var(--green-600)}.tt{background:var(--teal-50);color:var(--teal-600)}.ta{background:var(--amber-50);color:var(--amber-600)}
-.pc h3{font-family:var(--serif);font-size:18px;font-weight:400;margin-bottom:9px;line-height:1.35;color:var(--text-primary)}
-.pc p{font-size:15px;color:var(--text-secondary);line-height:1.7}
-.carrow{font-family:var(--sans);font-size:13px;color:var(--teal-500);font-weight:500;margin-top:16px}
+.pc h3{font-family:var(--serif);font-size:17px;font-weight:400;margin-bottom:8px;line-height:1.35}
+.pc p{font-size:14px;color:var(--text-secondary);line-height:1.7}
+.carrow{font-family:var(--sans);font-size:12px;color:var(--teal-500);font-weight:500;margin-top:14px}
 
-/* ── SKILLS ── */
-.skill-sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:2.5rem}
-.skill-group h4{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-500);margin-bottom:14px}
-.skwrap{display:flex;flex-wrap:wrap;gap:9px}
-.chip{font-size:14px;font-family:var(--serif);padding:7px 16px;border-radius:100px;border:1px solid var(--border-md);background:var(--bg-card);color:var(--text-secondary)}
+/* SKILLS */
+.skill-sections{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.25rem}
+.skill-group h4{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-500);margin-bottom:12px}
+.skwrap{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:14px;font-family:var(--serif);padding:6px 14px;border-radius:100px;border:1px solid var(--border-md);background:var(--bg-card);color:var(--text-secondary)}
 
-/* ── CONTACT ── */
+/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
-.contact-body{font-size:17px;color:var(--text-secondary);line-height:1.85;margin-bottom:2rem}
-.contact-links{display:flex;flex-direction:column;gap:14px}
-.contact-link{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text-secondary);font-size:16px;transition:color .2s}
+.contact-body{font-size:16px;color:var(--text-secondary);line-height:1.85;margin-bottom:1.75rem}
+.contact-links{display:flex;flex-direction:column;gap:12px}
+.contact-link{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--text-secondary);font-size:15px;transition:color .2s}
 .contact-link:hover{color:var(--teal-500)}
 .contact-link-label{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);min-width:56px;flex-shrink:0}
-.contact-form{display:flex;flex-direction:column;gap:18px}
-.form-field label{display:block;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:7px}
-.form-field input,.form-field textarea{width:100%;font-family:var(--serif);font-size:16px;color:var(--text-primary);background:var(--bg-card);border:1px solid var(--border-md);padding:11px 16px;border-radius:10px;outline:none;transition:border-color .2s;resize:vertical}
+.contact-form{display:flex;flex-direction:column;gap:16px}
+.form-field label{display:block;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px}
+.form-field input,.form-field textarea{width:100%;font-family:var(--serif);font-size:15px;color:var(--text-primary);background:var(--bg-card);border:1px solid var(--border-md);padding:10px 14px;border-radius:10px;outline:none;transition:border-color .2s;resize:vertical}
 .form-field input:focus,.form-field textarea:focus{border-color:var(--teal-500)}
-.btn-send{font-family:var(--sans);font-size:14px;font-weight:500;padding:12px 28px;border-radius:100px;background:var(--teal-500);color:#fff;border:none;cursor:pointer;transition:background .2s;align-self:flex-start}
+.btn-send{font-family:var(--sans);font-size:13px;font-weight:500;padding:11px 26px;border-radius:100px;background:var(--teal-500);color:#fff;border:none;cursor:pointer;transition:background .2s;align-self:flex-start}
 .btn-send:hover{background:var(--teal-600)}
 
-/* ── PHOTO UPLOAD ── */
-.hero-photo-zone{position:relative;width:100%;height:100%;min-height:360px;background:var(--bg-subtle);border-radius:16px;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;cursor:pointer;border:1.5px dashed var(--border-md)}
-.hero-photo-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.hero-photo-zone img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;border-radius:16px}
-.hz-icon{font-size:28px;color:var(--text-muted)}
-.hz-text{font-family:var(--sans);font-size:12px;color:var(--text-muted);letter-spacing:.04em}
-
-/* ── HERO SPLIT LAYOUT ── */
-.hero-split{display:grid;grid-template-columns:1fr 420px;gap:0;min-height:520px;max-width:900px;margin:0 auto;padding:5rem 2.5rem 4rem}
-.hero-split .hero-left{padding-right:3rem}
-
-footer{border-top:1px solid var(--border);padding:2rem 2.5rem;text-align:center;font-family:var(--sans);font-size:14px;color:var(--text-muted)}
-footer a{color:var(--teal-500);text-decoration:none}
-
-/* ── PROJECT PAGE ── */
+/* PROJECT & RESUME PAGES */
 .pp{max-width:740px;margin:0 auto;padding:2.5rem 2.5rem 5rem}
 .bbtn{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:14px;color:var(--text-secondary);background:none;border:none;cursor:pointer;padding:0;margin-bottom:2.5rem;transition:color .2s}
 .bbtn:hover{color:var(--text-primary)}
 .phdr{margin-bottom:2rem;padding-bottom:1.75rem;border-bottom:1px solid var(--border)}
-.phdr h1{font-family:var(--serif);font-size:36px;font-weight:400;line-height:1.2;margin-bottom:10px}
-.psub{font-size:16px;color:var(--text-secondary);margin-bottom:14px;font-family:var(--sans)}
+.phdr h1{font-family:var(--serif);font-size:34px;font-weight:400;line-height:1.2;margin-bottom:10px}
+.psub{font-size:14px;color:var(--text-secondary);margin-bottom:12px;font-family:var(--sans)}
 .ptags{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.pbody{font-size:17px;color:var(--text-secondary);line-height:1.9}
-.pbody h2{font-family:var(--serif);font-size:24px;font-weight:400;color:var(--text-primary);margin:2.5rem 0 .75rem}
-.pbody p{margin-bottom:1.1rem}
-.pph{background:var(--bg-subtle);border:1px dashed var(--border-md);border-radius:12px;padding:1.75rem;font-family:var(--sans);font-size:14px;color:var(--text-muted);text-align:center;margin:1.75rem 0}
-.hl{background:var(--teal-50);border-left:3px solid var(--teal-500);border-radius:0 10px 10px 0;padding:16px 20px;margin:1.5rem 0;font-size:16px;color:var(--teal-800);line-height:1.75}
+.pbody{font-size:16px;color:var(--text-secondary);line-height:1.9}
+.pbody h2{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--text-primary);margin:2.25rem 0 .65rem}
+.pbody p{margin-bottom:1rem}
+.pph{background:var(--bg-subtle);border:1px dashed var(--border-md);border-radius:12px;padding:1.5rem;font-family:var(--sans);font-size:13px;color:var(--text-muted);text-align:center;margin:1.5rem 0}
+.hl{background:var(--teal-50);border-left:3px solid var(--teal-500);border-radius:0 10px 10px 0;padding:14px 18px;margin:1.5rem 0;font-size:15px;color:var(--teal-800);line-height:1.75}
 .ipbadge{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.05em;padding:4px 11px;border-radius:100px;background:var(--amber-50);color:var(--amber-600);text-transform:uppercase}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0}
+.stat-box{background:var(--bg-subtle);border-radius:10px;padding:1rem 1.25rem;text-align:center}
+.stat-num{font-family:var(--serif);font-size:22px;font-weight:400;color:var(--teal-600);display:block;margin-bottom:4px}
+.stat-label{font-family:var(--sans);font-size:11px;color:var(--text-muted);letter-spacing:.04em}
+.ext-link{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:13px;font-weight:500;color:var(--teal-500);text-decoration:none;padding:9px 18px;border:1px solid var(--teal-100);border-radius:100px;margin-top:8px;transition:background .2s}
+.ext-link:hover{background:var(--teal-50)}
 
-/* ── RESUME PAGE ── */
 .resume-wrap{max-width:900px;margin:0 auto;padding:2.5rem 2.5rem 5rem}
-.resume-wrap h2{font-family:var(--serif);font-size:32px;font-weight:400;margin-bottom:.5rem}
-.resume-wrap p{font-size:16px;color:var(--text-secondary);margin-bottom:1.5rem;font-family:var(--sans)}
+.resume-wrap h2{font-family:var(--serif);font-size:30px;font-weight:400;margin-bottom:.5rem}
+.resume-wrap p{font-size:15px;color:var(--text-secondary);margin-bottom:1.5rem;font-family:var(--sans)}
 .pdf-frame{width:100%;height:80vh;border:1px solid var(--border);border-radius:12px}
-.resume-dl{display:inline-block;margin-bottom:1.5rem;padding:11px 26px;border-radius:100px;font-family:var(--sans);font-size:14px;font-weight:500;background:var(--teal-500);color:#fff;text-decoration:none;transition:background .2s}
+.resume-dl{display:inline-block;margin-bottom:1.5rem;padding:10px 24px;border-radius:100px;font-family:var(--sans);font-size:13px;font-weight:500;background:var(--teal-500);color:#fff;text-decoration:none;transition:background .2s;margin-right:10px}
 .resume-dl:hover{background:var(--teal-600)}
-.resume-upload-zone{position:relative;display:inline-flex;align-items:center;gap:10px;margin-bottom:1.5rem;padding:11px 26px;border-radius:100px;font-family:var(--sans);font-size:14px;font-weight:500;border:1.5px dashed var(--border-md);color:var(--text-secondary);cursor:pointer;transition:border-color .2s}
+.resume-upload-zone{position:relative;display:inline-flex;align-items:center;gap:8px;margin-bottom:1.5rem;padding:10px 24px;border-radius:100px;font-family:var(--sans);font-size:13px;font-weight:500;border:1.5px dashed var(--border-md);color:var(--text-secondary);cursor:pointer;transition:border-color .2s}
 .resume-upload-zone:hover{border-color:var(--teal-500);color:var(--teal-500)}
 .resume-upload-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
 
+footer{border-top:1px solid var(--border);padding:2rem 2.5rem;text-align:center;font-family:var(--sans);font-size:13px;color:var(--text-muted)}
+footer a{color:var(--teal-500);text-decoration:none}
+
 @media(max-width:700px){
   nav{padding:0 1.25rem}
+  .nav-links{gap:1rem}
+  .nav-links a{font-size:12px}
   .hero-split{grid-template-columns:1fr;padding:3.5rem 1.25rem 3rem}
-  .hero-split .hero-left{padding-right:0}
+  .hero-right{padding-left:0;margin-top:2rem}
   .hero-photo-zone{min-height:220px}
   .sw{padding:2.5rem 1.25rem}
-  .video-section{padding:2.5rem 1.25rem}
-  .exp-item{flex-direction:column;gap:.75rem}
-  .exp-left{width:auto}
   .about-grid{grid-template-columns:1fr}
+  .exp-item,.edu-item{flex-direction:column;gap:.5rem}
+  .exp-left,.edu-left{width:auto}
   .contact-grid{grid-template-columns:1fr}
+  .stat-row{grid-template-columns:1fr 1fr}
   .pp{padding:1.5rem 1.25rem 4rem}
-  .skill-sections{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════
-     HOME PAGE
-═══════════════════════════════════ -->
+<!-- ═══════════════ HOME PAGE ═══════════════ -->
 <div id="home-page" class="page active">
 
 <nav>
@@ -190,39 +197,39 @@ footer a{color:var(--teal-500);text-decoration:none}
   <div class="nav-links">
     <a onclick="sc('about')">About</a>
     <a onclick="sc('experience')">Experience</a>
+    <a onclick="sc('education')">Education</a>
     <a onclick="sc('projects')">Projects</a>
     <a onclick="sc('skills')">Skills</a>
-    <a onclick="sc('intro')">Intro</a>
     <a onclick="sc('contact')">Contact</a>
-    <a onclick="go('resume')">Résumé</a>
+    <a onclick="go('resume')">Resume</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero-split">
-  <div class="hero-left">
-    <p class="hero-eyebrow">Information Science &amp; Data Science · UIUC 2026</p>
-    <h1 style="font-family:var(--serif);font-size:clamp(44px,6.5vw,68px);font-weight:400;line-height:1.08;letter-spacing:-.02em;margin-bottom:1.75rem">Energy, finance,<br>and <em style="font-style:italic;color:var(--teal-500)">data</em> — unified.</h1>
-    <p class="hero-bio">I bridge technical systems and investment decisions — combining energy policy experience at the U.S. Department of Energy with financial modeling and data-driven analysis to support sustainable, scalable infrastructure.</p>
+  <div class="hero">
+    <p class="hero-eyebrow">Information Science &amp; Data Science &middot; UIUC &middot; May 2026</p>
+    <h1>Building the future of energy<br>through <em>finance and data.</em></h1>
+    <p class="hero-bio">I'm a senior at UIUC studying Information Science and Data Science with experience across energy finance, infrastructure investing, and data analytics. Through roles at the U.S. Department of Energy, Deloitte, and a private investment firm, I've worked on renewable energy finance, project evaluation, and market analysis. I'm especially interested in how data and capital can accelerate the energy transition at scale.</p>
     <div class="hero-tags">
-      <span class="hero-tag">Wholesale energy markets</span>
-      <span class="hero-tag">Financial modeling</span>
-      <span class="hero-tag">Python · SQL · Excel</span>
-      <span class="hero-tag">Project finance</span>
+      <span class="hero-tag">Energy Finance</span>
+      <span class="hero-tag">Project Finance</span>
+      <span class="hero-tag">Wholesale &amp; Renewable Energy Markets</span>
+      <span class="hero-tag">Financial Modeling</span>
+      <span class="hero-tag">Python &middot; SQL &middot; Excel</span>
     </div>
     <div class="hero-cta">
       <button class="btn-p" onclick="sc('projects')">View projects</button>
-      <button class="btn-s" onclick="go('resume')">View résumé</button>
+      <button class="btn-s" onclick="go('resume')">View resume</button>
     </div>
   </div>
-
-  <!-- PHOTO UPLOAD -->
-  <label class="hero-photo-zone" id="photo-zone">
-    <input type="file" accept="image/*" onchange="previewPhoto(event)">
-    <img id="hero-img" alt="Yerin Yun">
-    <div class="hz-icon" id="hz-icon">+</div>
-    <div class="hz-text" id="hz-text">Upload your photo</div>
-  </label>
+  
+  <div class="hero-right">
+  <div class="hero-photo-zone">
+    <img src="photo.jpg" alt="Yerin Yun">
+  </div>
+</div>
+  
 </div>
 
 <hr class="div">
@@ -232,35 +239,30 @@ footer a{color:var(--teal-500);text-decoration:none}
   <div class="slabel">About</div>
   <div class="about-grid">
     <div>
-      <blockquote class="about-quote">"I came to energy because I believe infrastructure is policy — and policy is people."</blockquote>
-      <p class="about-body">I grew up in Seoul and came to the U.S. to study how data and systems thinking can shape better decisions — especially in energy, where the stakes are enormous and the models matter. At UIUC, I've been working at the intersection of information science and real-world financial structures.</p>
-      <p class="about-body">Outside of work, I'm drawn to things that require close attention. I shoot film photography, explore financial models the way some people do crosswords, and I'm actively building a personal sustainability practice that goes beyond buzzwords.</p>
+      <blockquote class="about-quote">"I'm interested in the systems behind everyday life, especially how energy, infrastructure, policy, and capital shape the way people live."</blockquote>
+      <p class="about-body">I'm a senior at UIUC from Seoul, South Korea, studying Information Science and Data Science. My academic and professional work sits at the intersection of energy systems, financial analysis, and data-driven decision-making — fields I came to because I believe the energy transition is one of the most consequential infrastructure challenges of our time.</p>
+      <p class="about-body">Outside of work and academics, I enjoy photography, modeling, and traveling. I'm especially interested in learning how different countries approach energy, infrastructure, and economic development. Through studying abroad in Singapore and China, I had the opportunity to experience new cultures firsthand and better understand how global systems and policies shape everyday life. I also enjoy meeting people from different backgrounds, exploring new cities, and discovering local cuisine.</p>
     </div>
     <div>
       <div class="interests-title">Interests</div>
       <div class="interests-grid">
-        <div class="interest-chip">Film Photography</div>
-        <div class="interest-chip">Financial Modeling</div>
-        <div class="interest-chip">Sustainability</div>
+        <div class="interest-chip">Photography</div>
+        <div class="interest-chip">Modeling</div>
+        <div class="interest-chip">Traveling</div>
+        <div class="interest-chip">Waste Management</div>
         <div class="interest-chip">Energy Policy</div>
-        <div class="interest-chip">Urbanism &amp; Cities</div>
+        <div class="interest-chip">Global Affairs</div>
         <div class="interest-chip">Data Visualization</div>
-        <div class="interest-chip">Korean Culture</div>
-        <div class="interest-chip">Long-form Reading</div>
+        <div class="interest-chip">Local Cuisine</div>
       </div>
-
       <div class="interests-title" style="margin-top:1.75rem">Currently</div>
-      <div class="currently-item">
-        <span class="currently-label">Reading</span>
-        <span>The Price of Time — Edward Chancellor</span>
-      </div>
       <div class="currently-item">
         <span class="currently-label">Building</span>
         <span>CAISO battery storage revenue model</span>
       </div>
       <div class="currently-item">
         <span class="currently-label">Seeking</span>
-        <span>Full-time roles in energy finance or infrastructure investing — graduating May 2026</span>
+        <span>Full-time roles in energy finance or infrastructure investing &mdash; graduating May 2026</span>
       </div>
     </div>
   </div>
@@ -269,20 +271,20 @@ footer a{color:var(--teal-500);text-decoration:none}
 <hr class="div">
 
 <!-- INTRO VIDEO -->
-<div class="video-section" id="intro">
+<div class="sw" id="intro">
   <div class="slabel">Introduction</div>
   <div class="vbox">
-    <div style="font-size:44px;margin-bottom:16px;color:var(--text-muted)">▶</div>
+    <div style="font-size:36px;margin-bottom:14px;color:var(--text-muted)">&#9654;</div>
     <h3>A quick introduction</h3>
     <p>A short video about who I am, what I work on, and what I'm looking for next.</p>
     <video id="video-el" controls></video>
     <iframe id="video-frame" allowfullscreen></iframe>
     <div id="video-ph">
-      <p class="vbox-note">Upload a video file or paste a Loom / YouTube URL</p>
+      <p style="font-family:var(--sans);font-size:13px;color:var(--teal-500);margin-bottom:12px">Upload a video file or paste a Loom / YouTube URL</p>
+      <input type="file" accept="video/*" id="vid-file" onchange="previewVid(event)" style="display:none">
       <div class="loom-wrap">
-        <input type="file" accept="video/*" id="vid-file" onchange="previewVid(event)" style="display:none">
         <button onclick="document.getElementById('vid-file').click()" class="btn-s" style="font-size:13px;padding:8px 18px">Upload video</button>
-        <input type="text" id="loom-url" placeholder="Paste Loom or YouTube URL…">
+        <input type="text" id="loom-url" placeholder="Paste Loom or YouTube URL&hellip;">
         <button onclick="embedVid()">Embed</button>
       </div>
     </div>
@@ -297,54 +299,108 @@ footer a{color:var(--teal-500);text-decoration:none}
 
   <div class="exp-item">
     <div class="exp-left">
-      <div class="exp-period">Sep 2025 – Jan 2026</div>
+      <div class="exp-period">Sep 2025 &ndash; Jan 2026</div>
       <div class="exp-loc">Washington, D.C.</div>
     </div>
     <div>
       <p class="exp-org">U.S. Department of Energy</p>
-      <h3>Portfolio Management Division Intern — Office of Energy Dominance Financing</h3>
-      <p class="exp-desc">Built capital-allocation frameworks synthesizing 20+ sources, modeled credit risk and repayment capacity across interest rate scenarios, and authored financial memos on tax-equity partnership-flip structures for an active federal loan portfolio.</p>
+      <h3>Portfolio Management Division Intern &mdash; Office of Energy Dominance Financing</h3>
+      <p class="exp-desc">Conducted credit and portfolio analysis for large-scale energy infrastructure financing projects within the DOE loan guarantee portfolio. Evaluated project cash flows, debt structures, sponsor financials, and refinancing scenarios to assess repayment capacity and long-term credit risk. Collaborated with engineers, legal counsel, and project sponsors on portfolio monitoring and covenant compliance. Developed financial memos on tax-equity partnership flip structures and built internal monitoring tools for active guarantees.</p>
       <div class="exp-tags">
-        <span class="exp-tag">Credit Risk</span>
-        <span class="exp-tag">Tax-Equity Structures</span>
+        <span class="exp-tag">Project Finance</span>
+        <span class="exp-tag">Credit Risk Analysis</span>
         <span class="exp-tag">Financial Modeling</span>
-        <span class="exp-tag">Federal Loan Portfolio</span>
+        <span class="exp-tag">Tax Equity Structures</span>
+        <span class="exp-tag">Infrastructure Finance</span>
       </div>
     </div>
   </div>
 
   <div class="exp-item">
     <div class="exp-left">
-      <div class="exp-period">Jul – Aug 2025</div>
+      <div class="exp-period">Jul &ndash; Aug 2025</div>
       <div class="exp-loc">Seoul, South Korea</div>
     </div>
     <div>
       <p class="exp-org">Deloitte Anjin LLC</p>
       <h3>Risk &amp; Financial Advisory Intern</h3>
-      <p class="exp-desc">Built acquisition models for a Class A Seoul commercial asset, analyzed Latin American PPP financing structures across three markets, and assessed Vietnam's coal-to-biomass retrofit opportunity — informing live client recommendations on energy transition investment strategy.</p>
+      <p class="exp-desc">Supported infrastructure and energy transition advisory projects across Asia and Latin America. Built acquisition and valuation models for a Class A commercial real estate asset in Seoul, including cash flow forecasting, IRR analysis, and investment scenario modeling. Analyzed PPP financing structures and evaluated energy transition opportunities such as Vietnam's coal-to-biomass retrofit market to support client infrastructure and investment strategy recommendations.</p>
       <div class="exp-tags">
+        <span class="exp-tag">Infrastructure Finance</span>
         <span class="exp-tag">Acquisition Modeling</span>
-        <span class="exp-tag">PPP Finance</span>
         <span class="exp-tag">Energy Transition</span>
-        <span class="exp-tag">Cross-border Analysis</span>
+        <span class="exp-tag">PPP Finance</span>
+        <span class="exp-tag">Valuation Analysis</span>
       </div>
     </div>
   </div>
 
   <div class="exp-item">
     <div class="exp-left">
-      <div class="exp-period">Dec 2024 – Jan 2025</div>
+      <div class="exp-period">Dec 2024 &ndash; Jan 2025</div>
       <div class="exp-loc">Seoul, South Korea</div>
     </div>
     <div>
       <p class="exp-org">TS Investment</p>
       <h3>Venture Capital &amp; Private Equity Intern</h3>
-      <p class="exp-desc">Conducted investment due diligence on a vertically integrated hospitality platform and analyzed historical hotel sales data to evaluate acquisition pricing, exit multiples, and cash flow stability — supporting deal-team decision-making.</p>
+      <p class="exp-desc">Conducted investment due diligence and market analysis for hospitality and real estate investment opportunities. Evaluated acquisition pricing assumptions, hotel transaction data, operating performance, and exit multiples to support investment decision-making across the firm's active deal pipeline. Assessed value-add renovation and operational improvement strategies for a vertically integrated hospitality platform.</p>
       <div class="exp-tags">
+        <span class="exp-tag">Private Equity</span>
         <span class="exp-tag">Due Diligence</span>
-        <span class="exp-tag">Exit Multiples</span>
         <span class="exp-tag">Cash Flow Analysis</span>
-        <span class="exp-tag">VC / PE</span>
+        <span class="exp-tag">Valuation</span>
+        <span class="exp-tag">Investment Research</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- EDUCATION -->
+<div class="sw" id="education">
+  <div class="slabel">Education</div>
+
+  <div class="edu-item">
+    <div class="edu-left">
+      <div class="edu-period">Aug 2022 &ndash; May 2026</div>
+      <div class="edu-loc">Urbana-Champaign, IL</div>
+    </div>
+    <div>
+      <p class="edu-school">University of Illinois Urbana-Champaign</p>
+      <h3>B.S. Information Science &amp; Data Science</h3>
+      <p class="edu-sub">Dual degree &middot; Expected May 2026</p>
+    </div>
+  </div>
+
+  <div class="edu-item">
+    <div class="edu-left">
+      <div class="edu-period">Aug &ndash; Dec 2024</div>
+      <div class="edu-loc">Singapore</div>
+    </div>
+    <div>
+      <p class="edu-school">National University of Singapore</p>
+      <h3>Study Abroad &mdash; Fall 2024</h3>
+      <p class="edu-detail">Courses: Energy &amp; Environmental Sustainability &middot; User-Centered Collaboration Design &middot; Value Creation in Innovation &middot; Discover South Asia</p>
+      <div class="edu-tags">
+        <span class="edu-tag">SDG Open Hack @ NUS</span>
+        <span class="edu-tag">Energy &amp; Sustainability</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="edu-item">
+    <div class="edu-left">
+      <div class="edu-period">Jun &ndash; Jul 2024</div>
+      <div class="edu-loc">China</div>
+    </div>
+    <div>
+      <p class="edu-school">Wanxiang Fellows Program</p>
+      <h3>Energy, Environment &amp; Natural Resources Law</h3>
+      <p class="edu-detail">Explored environmental issues and renewable resources in China with exposure to Chinese language, culture, and policy. Courses: China Renewable Energy Policy &middot; Sustainability &middot; Green Technology &middot; Renewable Resources</p>
+      <div class="edu-tags">
+        <span class="edu-tag">China Renewable Energy Policy</span>
+        <span class="edu-tag">Green Technology</span>
       </div>
     </div>
   </div>
@@ -354,44 +410,31 @@ footer a{color:var(--teal-500);text-decoration:none}
 
 <!-- PROJECTS -->
 <div class="sw" id="projects">
-  <div class="slabel">Data projects</div>
+  <div class="slabel">Projects</div>
   <div class="pgrid">
 
-    <div class="pc" onclick="proj(1)">
+    <div class="pc featured" onclick="proj(1)">
       <div class="pthumb th1" id="thumb-1">
         <input type="file" accept="image/*" onclick="event.stopPropagation()" onchange="previewThumb(event,1)">
-        <span id="thumb-emoji-1" style="font-size:36px">🌿</span>
-        <span class="ph-text" id="ph-text-1">Click to add screenshot</span>
+        <span class="ph-text" id="ph-text-1">Upload screenshot</span>
       </div>
-      <span class="ptag tg">EIA datasets · Class</span>
-      <h3>U.S. State Energy Analysis</h3>
-      <p>Data wrangling and renewable vs. fossil capacity analysis across states, with price correlation using real federal EIA-860/861 datasets.</p>
-      <div class="carrow">View project →</div>
+      <div class="fp">Featured &middot; Full pipeline</div>
+      <span class="ptag tg">EIA-860/861 &middot; Team &middot; Class</span>
+      <h3>U.S. Electricity Market Transformation (2014&ndash;2023)</h3>
+      <p>Rigorous analysis of how renewable energy share and market structure affect electricity prices across all 50 states, with an interactive Hugging Face dashboard.</p>
+      <div class="carrow">View project &rarr;</div>
     </div>
 
     <div class="pc" onclick="proj(2)">
-      <div class="pthumb th2" id="thumb-2">
+      <div class="pthumb th3" id="thumb-2">
         <input type="file" accept="image/*" onclick="event.stopPropagation()" onchange="previewThumb(event,2)">
-        <span id="thumb-emoji-2" style="font-size:36px">🗺️</span>
-        <span class="ph-text" id="ph-text-2">Click to add screenshot</span>
+        <span class="ph-text" id="ph-text-2">Upload screenshot</span>
       </div>
-      <span class="ptag tt">Data viz · Geographic</span>
-      <h3>Energy Mix Visualization</h3>
-      <p>Visual storytelling across states — energy sources, generation mix, and pricing trends as interactive geographic charts.</p>
-      <div class="carrow">View project →</div>
-    </div>
-
-    <div class="pc featured" onclick="proj(3)">
-      <div class="pthumb th3" id="thumb-3">
-        <input type="file" accept="image/*" onclick="event.stopPropagation()" onchange="previewThumb(event,3)">
-        <span id="thumb-emoji-3" style="font-size:36px">⚡</span>
-        <span class="ph-text" id="ph-text-3">Click to add screenshot</span>
-      </div>
-      <div class="fp">In progress · highest impact</div><br>
-      <span class="ptag ta">CAISO · Solo</span>
-      <h3>CAISO DA/RT Battery Storage Analysis</h3>
-      <p>Day-ahead vs. real-time price spread modeling at key CAISO nodes — quantifying battery storage revenue potential from public OASIS data.</p>
-      <div class="carrow">View project →</div>
+      <div class="fp">In progress &middot; Solo</div>
+      <span class="ptag ta">CAISO &middot; Solo</span>
+      <h3>CAISO DA/RT Battery Storage Revenue Analysis</h3>
+      <p>Day-ahead vs. real-time price spread modeling at key CAISO nodes &mdash; quantifying battery storage revenue potential from public OASIS data.</p>
+      <div class="carrow">View project &rarr;</div>
     </div>
 
   </div>
@@ -445,8 +488,8 @@ footer a{color:var(--teal-500);text-decoration:none}
     <div class="skill-group">
       <h4>Languages</h4>
       <div class="skwrap">
-        <span class="chip">English — Fluent</span>
-        <span class="chip">Korean — Native</span>
+        <span class="chip">English &mdash; Fluent</span>
+        <span class="chip">Korean &mdash; Native</span>
       </div>
     </div>
     <div class="skill-group">
@@ -469,19 +512,16 @@ footer a{color:var(--teal-500);text-decoration:none}
   <div class="slabel">Contact</div>
   <div class="contact-grid">
     <div>
-      <p class="contact-body">I'm looking for full-time roles in energy finance, infrastructure investing, or data-driven policy work — graduating May 2026. If you're building something at the intersection of capital and clean energy, I'd love to connect.</p>
+      <p class="contact-body">I'm looking for full-time roles in energy finance, infrastructure investing, or data-driven policy work &mdash; graduating May 2026. If you're building something at the intersection of capital and clean energy, I'd love to connect.</p>
       <div class="contact-links">
         <a class="contact-link" href="mailto:yryun2@outlook.com">
-          <span class="contact-link-label">Email</span>
-          yryun2@outlook.com
+          <span class="contact-link-label">Email</span>yryun2@outlook.com
         </a>
-        <a class="contact-link" href="https://linkedin.com/in/yourprofile" target="_blank">
-          <span class="contact-link-label">LinkedIn</span>
-          linkedin.com/in/yourprofile
+        <a class="contact-link" href="https://linkedin.com/in/yerinyun/" target="_blank">
+          <span class="contact-link-label">LinkedIn</span>linkedin.com/in/yerinyun
         </a>
         <a class="contact-link" href="https://github.com/yerinyun02" target="_blank">
-          <span class="contact-link-label">GitHub</span>
-          github.com/yerinyun02
+          <span class="contact-link-label">GitHub</span>github.com/yerinyun02
         </a>
       </div>
     </div>
@@ -496,7 +536,7 @@ footer a{color:var(--teal-500);text-decoration:none}
       </div>
       <div class="form-field">
         <label>Message</label>
-        <textarea rows="4" placeholder="Hi Yerin — I'd love to chat about…"></textarea>
+        <textarea rows="4" placeholder="Hi Yerin &mdash; I'd love to chat about&hellip;"></textarea>
       </div>
       <button class="btn-send">Send message</button>
     </div>
@@ -504,40 +544,36 @@ footer a{color:var(--teal-500);text-decoration:none}
 </div>
 
 <footer>
-  Yerin Yun · B.S. Information Science &amp; Data Science, UIUC ·
+  Yerin Yun &middot; B.S. Information Science &amp; Data Science, UIUC &middot;
   <a href="mailto:yryun2@outlook.com">yryun2@outlook.com</a>
 </footer>
 </div><!-- end home-page -->
 
-<!-- ═══════════════════════════════════
-     PROJECT PAGE
-═══════════════════════════════════ -->
+<!-- ═══════════════ PROJECT PAGE ═══════════════ -->
 <div id="project-page" class="page">
   <nav>
     <span class="nav-logo" onclick="go('home')">Yerin Yun</span>
     <div class="nav-links">
-      <a onclick="go('home')">← All projects</a>
-      <a onclick="go('resume')">Résumé</a>
+      <a onclick="go('home')">&larr; All projects</a>
+      <a onclick="go('resume')">Resume</a>
     </div>
   </nav>
   <div class="pp" id="proj-content"></div>
 </div>
 
-<!-- ═══════════════════════════════════
-     RESUME PAGE
-═══════════════════════════════════ -->
+<!-- ═══════════════ RESUME PAGE ═══════════════ -->
 <div id="resume-page" class="page">
   <nav>
     <span class="nav-logo" onclick="go('home')">Yerin Yun</span>
     <div class="nav-links">
-      <a onclick="go('home')">← Home</a>
+      <a onclick="go('home')">&larr; Home</a>
     </div>
   </nav>
   <div class="resume-wrap">
-    <button class="bbtn" onclick="go('home')">← Home</button>
-    <h2>Résumé</h2>
-    <p>Yerin Yun · B.S. Information Science &amp; Data Science, UIUC 2026</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:1.5rem">
+    <button class="bbtn" onclick="go('home')">&larr; Home</button>
+    <h2>Resume</h2>
+    <p>Yerin Yun &middot; B.S. Information Science &amp; Data Science, UIUC 2026</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:1.5rem">
       <a class="resume-dl" href="Yerin_Yun_Resume_4_17_26.pdf" id="resume-dl-link" download>Download PDF</a>
       <label class="resume-upload-zone">
         <input type="file" accept=".pdf" onchange="handleResume(event)">
@@ -549,104 +585,122 @@ footer a{color:var(--teal-500);text-decoration:none}
 </div>
 
 <script>
-const P={
-  1:{title:"U.S. State Energy Analysis",sub:"Data wrangling · Renewable/price correlation · EIA-860/861 datasets",tc:"tg",tl:"Class project",ip:false,
-    body:`<div class="hl">Uses real federal EIA-860 and EIA-861 datasets — state-level generation capacity, fuel mix, and electricity pricing across the United States.</div>
-    <h2>Overview</h2><p>Add your project overview — the research question, scope of the dataset, and what you set out to understand about U.S. energy generation patterns.</p>
-    <div class="pph">📊 Add a key chart — e.g. renewable capacity by state, price vs. generation mix scatter</div>
-    <h2>Methods &amp; tools</h2><p>Describe your data wrangling approach — how you cleaned and joined EIA tables, and which Python libraries or Excel tools you used.</p>
-    <h2>Key findings</h2><p>Summarize 2–3 findings — e.g. states with higher renewable share and their price correlation, regional generation mix patterns.</p>
-    <div class="pph">📎 Link to GitHub repo or Jupyter notebook</div>`
+const P = {
+  1: {
+    title: "U.S. Electricity Market Transformation (2014\u20132023)",
+    sub: "EIA-860/861 datasets \u00b7 State fixed-effects regression \u00b7 Interactive dashboard \u00b7 Team project",
+    tc: "tg", tl: "EIA datasets \u00b7 Team \u00b7 Class", ip: false,
+    body: `
+      <div class="hl">A full data science pipeline &mdash; from raw EIA datasets to rigorous regression analysis to a live interactive Hugging Face dashboard &mdash; examining how renewable energy and market structure affect electricity prices across all 50 U.S. states (2014&ndash;2023).</div>
+
+      <div class="stat-row">
+        <div class="stat-box"><span class="stat-num">50</span><span class="stat-label">U.S. states analyzed</span></div>
+        <div class="stat-box"><span class="stat-num">10</span><span class="stat-label">years of data (2014&ndash;2023)</span></div>
+        <div class="stat-box"><span class="stat-num">0.93</span><span class="stat-label">Avg. adjusted R&sup2;</span></div>
+      </div>
+
+      <h2>Overview</h2>
+      <p>The U.S. electricity market has undergone significant structural changes over the past decade, driven by the rapid growth of renewable energy, the rise of Independent Power Producers (IPPs), and shifting consumption patterns across sectors. This project asks: does renewable energy actually lower electricity prices for consumers?</p>
+      <p>Using two federal EIA datasets merged on state and year, we built a panel dataset covering generation capacity, producer type, fuel mix, and retail electricity prices by sector across all 50 states &mdash; then applied state fixed-effects regression to isolate the effect of renewable share on prices.</p>
+
+      <h2>Part 1 &mdash; Analysis</h2>
+      <p><strong>Data pipeline:</strong> The EIA-860 dataset (supply side) covers nameplate generation capacity by fuel source and producer type. The EIA-861 dataset (demand side) covers retail electricity sales, revenues, and prices by customer sector. After cleaning both datasets in Python and OpenRefine, we merged them on State and Year to produce a 10,800-row panel dataset, then derived share indicators (renewable share, fossil share, IPP share) for modeling.</p>
+      <p><strong>Methods:</strong> State fixed-effects OLS regression with HC3 robust standard errors, controlling for fossil share, IPP share, year, and state-level differences. Three separate models, one per customer sector: residential, commercial, and industrial.</p>
+      <p><strong>Key findings:</strong> Across all three sectors, a one percentage point increase in renewable energy share was associated with a statistically significant <em>decrease</em> in electricity prices &mdash; ranging from &minus;0.311 to &minus;0.366 &cent;/kWh (all p &lt; 0.01). Models explained 92&ndash;94% of price variation. The intuition: once renewables are built, fuel costs are zero, making them cheaper to operate than fossil plants over time. Importantly, all customer sectors benefit &mdash; not just large industrial users.</p>
+      <p>Average residential prices rose from 13.16 &cent;/kWh in 2014 to 16.64 &cent;/kWh in 2023, with the sharpest increase after 2021 &mdash; consistent across all sectors and visible in the trend analysis.</p>
+
+      <h2>Part 2 &mdash; Interactive Dashboard</h2>
+      <p>To make these findings accessible, we built an interactive Hugging Face Space where users can explore the data by year, sector, and state. Select a year and price sector to see each state as a dot: horizontal position shows renewable capacity share, vertical position shows electricity price, and dot color shows IPP influence. Click any state to drill into its full energy mix breakdown.</p>
+      <a class="ext-link" href="https://huggingface.co/spaces/yryun2/Historical_US_Energy_Market_Trends" target="_blank">View live dashboard &rarr;</a>
+
+      <h2>Contributors &amp; Tools</h2>
+      <p>Yerin Yun &amp; Brisa Jasso &middot; Python (pandas, statsmodels, matplotlib) &middot; OpenRefine &middot; EIA-860 &amp; EIA-861 datasets &middot; Hugging Face Spaces</p>
+      <div class="pph">GitHub repository and full regression output available on request</div>
+    `
   },
-  2:{title:"Energy Mix Visualization",sub:"Visual storytelling · States + energy sources + pricing",tc:"tt",tl:"Data viz project",ip:false,
-    body:`<div class="hl">Interactive geographic visualizations showing how energy source mix and electricity pricing vary across U.S. states — making complex federal data accessible at a glance.</div>
-    <h2>Overview</h2><p>Add your project overview — the visual story you wanted to tell, the intended audience, and the tools you used.</p>
-    <div class="pph">📊 Embed or screenshot your key visualization — choropleth map, bar chart race, or dashboard</div>
-    <h2>Methods &amp; tools</h2><p>Describe the visualization stack — e.g. Python (Plotly, Folium, Altair), Tableau, or Power BI.</p>
-    <h2>Key findings</h2><p>What geographic or temporal patterns stood out? What did the visual reveal that tables could not?</p>
-    <div class="pph">📎 Link to live dashboard or GitHub repo</div>`
-  },
-  3:{title:"CAISO Day-Ahead vs. Real-Time Battery Storage Analysis",sub:"Wholesale market mechanics · CAISO fluency · Scenario modeling",tc:"ta",tl:"Solo project",ip:true,
-    body:`<div class="hl">Analyzes day-ahead (DA) vs. real-time (RT) price spreads at key CAISO nodes — quantifying battery storage revenue potential using public OASIS data.</div>
-    <h2>Overview</h2><p>Add your project overview — the core question (how much can a battery earn through DA/RT arbitrage at a given CAISO node?) and your analytical approach.</p>
-    <div class="pph">📊 Add your DA vs. RT price spread chart or Excel scenario model output</div>
-    <h2>Data source</h2><p>Data pulled from CAISO OASIS (oasis.caiso.com) — public LMP price data at selected pricing nodes. Python for data extraction; Excel for scenario analysis.</p>
-    <h2>Methods &amp; tools</h2><p>Describe the price spread calculation, node selection rationale, and the Excel scenario model structure (base / upside / downside revenue cases).</p>
-    <h2>Key findings</h2><p>Summarize 2–3 quantitative findings — e.g. average DA/RT spread, estimated annual revenue per MWh of storage, sensitivity to timing.</p>
-    <div class="pph">📎 Link to Excel model or GitHub repo when complete</div>`
+  2: {
+    title: "CAISO DA/RT Battery Storage Revenue Analysis",
+    sub: "Wholesale market mechanics \u00b7 CAISO price spreads \u00b7 Solo project \u00b7 In progress",
+    tc: "ta", tl: "CAISO \u00b7 Solo", ip: true,
+    body: `
+      <div class="hl">Modeling day-ahead vs. real-time price spreads at key CAISO nodes to quantify battery storage revenue potential &mdash; using public OASIS data to build a scenario-based financial model.</div>
+
+      <h2>Overview</h2>
+      <p>Battery storage projects earn revenue primarily by charging when electricity is cheap and discharging when it's expensive. In CAISO (California's grid operator), the difference between day-ahead (DA) and real-time (RT) prices creates arbitrage opportunities that storage can capture. This project quantifies that opportunity at specific pricing nodes using historical OASIS data.</p>
+
+      <h2>Data Source</h2>
+      <p>Price data pulled from the CAISO OASIS public API &mdash; locational marginal prices (LMPs) at selected pricing nodes, covering both day-ahead and real-time intervals. Python used for data extraction and processing; Excel for scenario modeling.</p>
+
+      <h2>Methods &amp; Tools</h2>
+      <p>Calculating DA/RT price spreads at selected nodes, identifying optimal charge/discharge windows, and building base/upside/downside revenue scenarios. Node selection based on historical price volatility and proximity to major renewable generation zones.</p>
+
+      <h2>Status</h2>
+      <div class="pph">Analysis in progress &mdash; GitHub and model output to be linked on completion</div>
+    `
   }
 };
 
-function go(n){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  const map={home:'home-page',project:'project-page',resume:'resume-page'};
+function go(n) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const map = { home: 'home-page', project: 'project-page', resume: 'resume-page' };
   document.getElementById(map[n]).classList.add('active');
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 }
-function proj(id){
-  const p=P[id];
-  document.getElementById('proj-content').innerHTML=`
-    <button class="bbtn" onclick="go('home')">← All projects</button>
+function proj(id) {
+  const p = P[id];
+  document.getElementById('proj-content').innerHTML = `
+    <button class="bbtn" onclick="go('home')">&larr; All projects</button>
     <div class="phdr">
       <h1>${p.title}</h1>
       <p class="psub">${p.sub}</p>
       <div class="ptags">
         <span class="ptag ${p.tc}">${p.tl}</span>
-        ${p.ip?'<span class="ipbadge">In progress</span>':''}
+        ${p.ip ? '<span class="ipbadge">In progress</span>' : ''}
       </div>
     </div>
     <div class="pbody">${p.body}</div>`;
   go('project');
 }
-function sc(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'})}
+function sc(id) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }); }
 
-function previewPhoto(e){
-  const f=e.target.files[0];if(!f)return;
-  const img=document.getElementById('hero-img');
-  img.src=URL.createObjectURL(f);img.style.display='block';
-  document.getElementById('hz-icon').style.display='none';
-  document.getElementById('hz-text').style.display='none';
-}
-function previewThumb(e,n){
-  const f=e.target.files[0];if(!f)return;
-  const zone=document.getElementById('thumb-'+n);
-  const img=document.createElement('img');
-  img.src=URL.createObjectURL(f);
-  img.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:10px';
+function previewThumb(e, n) {
+  const f = e.target.files[0]; if (!f) return;
+  const zone = document.getElementById('thumb-' + n);
+  const img = document.createElement('img');
+  img.src = URL.createObjectURL(f);
+  img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:10px';
   zone.appendChild(img);
-  document.getElementById('thumb-emoji-'+n).style.display='none';
-  document.getElementById('ph-text-'+n).style.display='none';
+  const ph = document.getElementById('ph-text-' + n);
+  if (ph) ph.style.display = 'none';
 }
-function previewVid(e){
-  const f=e.target.files[0];if(!f)return;
-  const v=document.getElementById('video-el');
-  v.src=URL.createObjectURL(f);v.style.display='block';
-  document.getElementById('video-ph').style.display='none';
-  document.getElementById('video-frame').style.display='none';
+function previewVid(e) {
+  const f = e.target.files[0]; if (!f) return;
+  const v = document.getElementById('video-el');
+  v.src = URL.createObjectURL(f); v.style.display = 'block';
+  document.getElementById('video-ph').style.display = 'none';
+  document.getElementById('video-frame').style.display = 'none';
 }
-function embedVid(){
-  const raw=document.getElementById('loom-url').value.trim();if(!raw)return;
-  let src='';
-  if(raw.includes('loom.com/share/')){
-    const id=raw.split('loom.com/share/')[1].split('?')[0];
-    src='https://www.loom.com/embed/'+id;
-  }else if(raw.includes('youtu.be/')){
-    const id=raw.split('youtu.be/')[1].split('?')[0];
-    src='https://www.youtube.com/embed/'+id;
-  }else if(raw.includes('youtube.com/watch')){
-    const u=new URL(raw);src='https://www.youtube.com/embed/'+u.searchParams.get('v');
-  }else{src=raw;}
-  const fr=document.getElementById('video-frame');
-  fr.src=src;fr.style.display='block';
-  document.getElementById('video-el').style.display='none';
-  document.getElementById('video-ph').style.display='none';
+function embedVid() {
+  const raw = document.getElementById('loom-url').value.trim(); if (!raw) return;
+  let src = '';
+  if (raw.includes('loom.com/share/')) {
+    src = 'https://www.loom.com/embed/' + raw.split('loom.com/share/')[1].split('?')[0];
+  } else if (raw.includes('youtu.be/')) {
+    src = 'https://www.youtube.com/embed/' + raw.split('youtu.be/')[1].split('?')[0];
+  } else if (raw.includes('youtube.com/watch')) {
+    src = 'https://www.youtube.com/embed/' + new URL(raw).searchParams.get('v');
+  } else { src = raw; }
+  const fr = document.getElementById('video-frame');
+  fr.src = src; fr.style.display = 'block';
+  document.getElementById('video-el').style.display = 'none';
+  document.getElementById('video-ph').style.display = 'none';
 }
-function handleResume(e){
-  const f=e.target.files[0];if(!f)return;
-  const url=URL.createObjectURL(f);
-  document.getElementById('pdf-frame').src=url;
-  document.getElementById('resume-dl-link').href=url;
-  document.getElementById('resume-dl-link').download=f.name;
+function handleResume(e) {
+  const f = e.target.files[0]; if (!f) return;
+  const url = URL.createObjectURL(f);
+  document.getElementById('pdf-frame').src = url;
+  const dl = document.getElementById('resume-dl-link');
+  dl.href = url; dl.download = f.name;
 }
 </script>
 </body>
