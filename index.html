@@ -28,7 +28,11 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.93);backdrop
 .nav-links a:hover{color:var(--text-primary)}
 
 /* HERO */
-.hero-split{display:grid;grid-template-columns:1fr;gap:0;max-width:980px;margin:0 auto;padding:5rem 2.5rem 4rem}
+.hero-split{display:grid;grid-template-columns:2fr 1fr;gap:3rem;max-width:980px;margin:0 auto;padding:5rem 2.5rem 4rem;align-items:start}
+.hero-left{display:flex;flex-direction:column;justify-content:flex-start}
+.hero-right{position:sticky;top:80px}
+.hero-photo-zone{width:100%;aspect-ratio:3/4;background:var(--bg-subtle);border-radius:14px;overflow:hidden}
+.hero-photo-zone img{width:100%;height:100%;object-fit:contain;object-position:center 15%;display:block;background:var(--bg-subtle)}
 .hero-eyebrow{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-500);margin-bottom:1.5rem}
 .hero h1{font-family:var(--serif);font-size:clamp(36px,5vw,52px);font-weight:400;line-height:1.08;letter-spacing:-.02em;margin-bottom:1.75rem}
 .hero h1 em{font-style:italic;color:var(--teal-500)}
