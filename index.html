@@ -28,7 +28,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,0.93);backdrop
 .nav-links a:hover{color:var(--text-primary)}
 
 /* HERO */
-.hero-split{display:grid;grid-template-columns:1fr 380px;gap:0;max-width:900px;margin:0 auto;padding:5rem 2.5rem 4rem}
+.hero-split{display:grid;grid-template-columns:1fr;gap:0;max-width:980px;margin:0 auto;padding:5rem 2.5rem 4rem}
 .hero-eyebrow{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-500);margin-bottom:1.5rem}
 .hero h1{font-family:var(--serif);font-size:clamp(36px,5vw,52px);font-weight:400;line-height:1.08;letter-spacing:-.02em;margin-bottom:1.75rem}
 .hero h1 em{font-style:italic;color:var(--teal-500)}
@@ -48,7 +48,7 @@ hr.div{border:none;border-top:1px solid var(--border);max-width:980px;margin:0 a
 
 /* PHOTO */
 .hero-right{padding-left:2rem;padding-top:0.25rem}
-.hero-photo-zone{width:100%;aspect-ratio:3/4;max-height:260px;background:var(--bg-subtle);border-radius:14px;overflow:hidden}
+.hero-photo-zone{width:100%;height:100%;max-height:180px;background:var(--bg-subtle);border-radius:14px;overflow:hidden}
 .hero-photo-zone img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;border-radius:14px}
 
 /* ABOUT */
@@ -210,9 +210,16 @@ footer a{color:var(--teal-500);text-decoration:none}
 <div class="hero-split">
   <div class="hero">
     <p class="hero-eyebrow">Information Science &amp; Data Science &middot; UIUC &middot; May 2026</p>
-    <h1>Driving the <span style="color:var(--teal-500)">energy transition</span> through <span style="color:var(--teal-500)">finance</span> and <span style="color:var(--teal-500)">data.</span></h1>
+    <div style="display:grid;grid-template-columns:1fr 200px;gap:2rem;align-items:start">
+      <h1>Driving the <span style="color:var(--teal-500)">energy transition</span> through <span style="color:var(--teal-500)">finance</span> and <span style="color:var(--teal-500)">data.</span></h1>
+      <div class="hero-photo-zone">
+        <img src="yerin.jpg" alt="Yerin Yun">
+      </div>
+    </div>
     <p class="hero-bio">I'm a senior at UIUC studying Information Science and Data Science with experience across energy finance, infrastructure investing, and data analytics.</p>
     <p class="hero-bio">Through roles at the U.S. Department of Energy, Deloitte, and a private investment firm, I've worked on renewable energy finance, project evaluation, and market analysis. I'm especially interested in how data and capital can accelerate the energy transition at scale.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Energy Finance</span>
       <span class="hero-tag">Project Finance</span>
       <span class="hero-tag">Wholesale &amp; Renewable Energy Markets</span>
       <span class="hero-tag">Financial Modeling</span>
@@ -220,16 +227,9 @@ footer a{color:var(--teal-500);text-decoration:none}
     </div>
     <div class="hero-cta">
       <button class="btn-p" onclick="sc('projects')">View projects</button>
-      <button class="btn-s" onclick="go('resume')">View resume</button>
+      <button class="btn-s" onclick="sc('contact')">Get in touch</button>
     </div>
   </div>
-  
-  <div class="hero-right">
-  <div class="hero-photo-zone">
-    <img src="yerin.jpg" alt="Yerin Yun">
-  </div>
-</div>
-  
 </div>
 
 <hr class="div">
